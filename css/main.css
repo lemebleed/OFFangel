@@ -29,7 +29,8 @@ img {
 }
 
 .container {
-    width: 1400px;
+    max-width: 1400px;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -125,4 +126,23 @@ header nav ul li.btn a:hover{
 .hero--info .btn:hover{
     cursor: pointer;
     transform: scale(1.05);
+}
+/*section ->*/
+.sellout {
+    padding: 50px;
+}
+
+.sellout h3{
+    font-weight: 600;
+    font-size: 31px;
+}
+
+.sellout .show-more {
+    color: #fff;
+    background-color: #0a3338;
+    border-radius: 5px;
+    padding: 12px 23px;
+    float: right;
+    display: block;
+    transition: all 500ms ease;
 }
