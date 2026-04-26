@@ -218,7 +218,7 @@ hr {
     transform: translateY(-2px);
 }
 
-.btn-register {
+.btn-registration {
     width: 100%;
     padding: 12px;
     background: transparent;
@@ -232,7 +232,7 @@ hr {
     transition: 0.3s;
 }
 
-.btn-register:hover {
+.btn-registration:hover {
     background: #4895ef;
     color: white;
 }
