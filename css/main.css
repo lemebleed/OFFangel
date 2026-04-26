@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
 
+/*Index*/
 * {
     margin: 0;
     padding: 0;
 }
 
-html,
-body {
+html,body {
     font-family: "Onest", sans-serif;
     font-weight: 800;
     color: #fff;
@@ -18,10 +18,6 @@ body {
 
 a {
     text-decoration: none;
-}
-
-img {
-    max-width: 100%;
 }
 
 .wrapper {
@@ -45,6 +41,7 @@ header .logo {
     text-transform: uppercase;
     font-size: 60px;
     font-weight: 600;
+    color: #c8cdd4;
 }
 
 header nav {
@@ -151,8 +148,93 @@ hr {
 .history-container {
     text-align: center;
     margin-top: 25px;
-    color: #555;
+    color: #6d7887;
     font-size: 14px;
+}
+
+/*Entry*/
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background: #22272e;
+}
+
+.auth-form {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #4895ef;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: #4895ef;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+}
+
+.btn-register {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: #4895ef;
+    border: 2px solid #4895ef;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn-register:hover {
+    background: #4895ef;
+    color: white;
 }
 
 @media(max-width: 768px) {
@@ -162,8 +244,7 @@ hr {
         padding: 0;
     }
 
-    html,
-    body {
+    html,body {
         font-family: "Onest", sans-serif;
         font-weight: 800;
         color: #fff;
@@ -289,7 +370,7 @@ hr {
     .history-container {
         text-align: center;
         margin-top: 25px;
-        color: #555;
+        color: #6d7887;
         font-size: 14px;
     }
 }
