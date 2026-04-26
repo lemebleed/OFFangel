@@ -10,52 +10,27 @@
 </head>
 
 <body>
+</form>
     <div class="wrapper">
         <header class="container">
             <span class="logo">OFFangel </span>
             <nav>
                 <ul>
-                    <li class="active"><a href="#">Главная</a></li>
-                    <li><a href="#">Про нас</a></li>
-                    <li><a href="#">Каталог</a></li>
-                    <li><a href="https://youtu.be/dQw4w9WgXcQ?si=nhiw7nvA1eva5EnS">Новинки</a></li>
-                    <li class="btn"><a href="#">Связаться с нами</a></li>
+                    <li class="active"><a href="#">Войти</a></li>
+                    <li class="btn"><a href="#">Корзина</a></li>
                 </ul>
             </nav>
         </header>
-        
-        <div class="hero container">
-            <div class="hero--info">
-                <h2>Монтаж оборудования</h2>
-                <h1>Высококвалифицированные специалисты с большим стажем</h1>
-                <p>Мы подберем все необходимое оборудование, с учетом необходимой цели проекта. Перед выполнением монтажа, также сможем выполнить демонтаж устаревшего оборудования, если оно имеется.</p>
-                <button class="btn">Узнать больше</button>
-            </div>
-        </div>
 
-        <div class="container sellout">
-            <a href="#" class="show-more">Показать больше</a>
-            <h3>Распродажные позиции</h3>
-            
-            <div class="positions">
-                <div class="block">
-                    <img src="img/cam.webp" alt="">
-                    <span><img src="img/fire.png" alt="">Скидка 50%!</span>
-                </div>
-                <div class="block">
-                    <img src="img/cam.webp" alt="">
-                    <span><img src="img/fire.png" alt="">Скидка 50%!</span>
-                </div>
-                <div class="block">
-                    <img src="img/cam.webp" alt="">
-                    <span><img src="img/fire.png" alt="">Скидка 50%!</span>
-                </div>
-                <div class="block">
-                    <img src="img/cam.webp" alt="">
-                    <span><img src="img/fire.png" alt="">Скидка 50%!</span>
-                </div>
-            </div>
-        </div>
+        <hr>
+
+        <form action="/search" method="get" class="search-form">
+        <input type="text" name="q" placeholder="Поиск..." required class="search-input">
+        <button type="submit" class="search-button">Найти</button>
+        </form>
+        
+        <div class="history-label">Последние покупки</div>
+        <div class="history-container"></div>
     </div>
 </body>
 
