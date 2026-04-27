@@ -8,6 +8,7 @@
     <title>OFFangle</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
     </form>
     <div class="wrapper">
@@ -16,7 +17,27 @@
                 <span class="logo">OFFangle</span>
             </a>
         </header>
+
+        <!-- Форма входа/регистрации -->
+        <div class="auth-container">
+            <form class="auth-form" id="loginForm">
+                <h2>Регистрация</h2>
+
+                <div class="input-group">
+                    <label for="login">Email</label>
+                    <input type="text" id="login" name="login" placeholder="Введите email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Придумайте пароль</label>
+                    <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+                </div>
+
+                <button type="button" class="btn-reg"
+                    onclick="location.href='registration.html'">Зарегистрироваться</button>
+            </form>
+        </div>
     </div>
 </body>
 
-</html>
+</html>8

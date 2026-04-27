@@ -152,7 +152,7 @@ hr {
     font-size: 14px;
 }
 
-/*Entry*/
+/*Auth*/
 
 .auth-container {
     display: flex;
@@ -233,6 +233,25 @@ hr {
 }
 
 .btn-registration:hover {
+    background: #4895ef;
+    color: white;
+}
+
+.btn-reg {
+    width: 100%;
+    padding: 12px;
+    background-color: #4895ef;
+    color: #fff;
+    border: 2px solid;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn-reg:hover {
     background: #4895ef;
     color: white;
 }
