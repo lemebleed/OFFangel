@@ -7,7 +7,8 @@
     padding: 0;
 }
 
-html,body {
+html,
+body {
     font-family: "Onest", sans-serif;
     font-weight: 800;
     color: #fff;
@@ -263,7 +264,8 @@ hr {
         padding: 0;
     }
 
-    html,body {
+    html,
+    body {
         font-family: "Onest", sans-serif;
         font-weight: 800;
         color: #fff;
@@ -391,5 +393,109 @@ hr {
         margin-top: 25px;
         color: #6d7887;
         font-size: 14px;
+    }
+
+    /*Auth*/
+
+    .auth-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 50vh;
+        background: #22272e;
+    }
+
+    .auth-form {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .auth-form h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    .input-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+        font-weight: 500;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .input-group input:focus {
+        outline: none;
+        border-color: #4895ef;
+    }
+
+    .btn-login {
+        width: 100%;
+        padding: 12px;
+        background: #4895ef;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn-login:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-registration {
+        width: 100%;
+        padding: 12px;
+        background: transparent;
+        color: #4895ef;
+        border: 2px solid #4895ef;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: 0.3s;
+    }
+
+    .btn-registration:hover {
+        background: #4895ef;
+        color: white;
+    }
+
+    .btn-reg {
+        width: 100%;
+        padding: 12px;
+        background-color: #4895ef;
+        color: #fff;
+        border: 2px solid;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: 0.3s;
+    }
+
+    .btn-reg:hover {
+        background: #4895ef;
+        color: white;
     }
 }
