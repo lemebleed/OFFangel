@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <html lang="ru">
 
 <head>
@@ -10,14 +9,133 @@
 </head>
 
 <body>
-    </form>
     <div class="wrapper">
         <header class="container">
-            <a href="index.html" class="logo-link">
-                <span class="logo">OFFangle</span>
-            </a>
+            <div class="header-left">
+                <a href="index.html" class="logo-link">
+                    <span class="logo">OFFangle</span>
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="balance">
+                    <span class="balance__label">Баланс:</span>
+                    <span class="balance__value" id="balanceValue">1500 ₽</span>
+                </div>
+                <div class="cart-icon">
+                    <a class="cart-icon__link">
+                        🛒
+                        <span class="cart-icon__count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
         </header>
+
+        <!-- Корзина -->
+        <div class="container cart-section">
+            <div class="cart">
+                <h2 class="cart__title">Корзина</h2>
+                
+                <div class="cart__list" id="cartList">
+                    <div class="cart__empty">
+                        <span>🛒</span>
+                        <p>Корзина пуста</p>
+                    </div>
+                </div>
+                
+                <div class="cart__total">
+                    <span>Итого:</span>
+                    <strong id="cartTotal">0 ₽</strong>
+                </div>
+                
+                <div class="cart__buttons">
+                    <button class="cart__btn cart__btn--outline" id="refillBalance">Пополнить баланс</button>
+                    <button class="cart__btn cart__btn--primary" id="checkout">Оплатить</button>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // Данные корзины (пока пустая)
+        let cartItems = [];
+        let userBalance = 1500;
+
+        // Обновить отображение баланса
+        function updateBalanceDisplay() {
+            const balanceEl = document.getElementById('balanceValue');
+            if (balanceEl) balanceEl.textContent = userBalance + ' ₽';
+        }
+
+        // Обновить количество товаров в иконке
+        function updateCartCount() {
+            const cartCountEl = document.getElementById('cartCount');
+            const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            if (cartCountEl) cartCountEl.textContent = totalCount;
+        }
+
+        // Обновить отображение корзины
+        function updateCartDisplay() {
+            const cartListEl = document.getElementById('cartList');
+            const cartTotalEl = document.getElementById('cartTotal');
+            
+            const totalSum = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotalEl.textContent = totalSum + ' ₽';
+            
+            if (cartItems.length === 0) {
+                cartListEl.innerHTML = `
+                    <div class="cart__empty">
+                        <span>🛒</span>
+                        <p>Корзина пуста</p>
+                    </div>
+                `;
+            } else {
+                cartListEl.innerHTML = cartItems.map(item => `
+                    <div class="cart__item">
+                        <span>${item.name}</span>
+                        <span>${item.price} ₽ × ${item.quantity}</span>
+                    </div>
+                `).join('');
+            }
+            
+            updateCartCount();
+        }
+
+        // Кнопка "Пополнить баланс" → открывает balance.html
+        document.getElementById('refillBalance')?.addEventListener('click', () => {
+            window.location.href = 'balance.html';
+        });
+        
+        // Кнопка "Оплатить"
+        document.getElementById('checkout')?.addEventListener('click', () => {
+            const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            if (cartItems.length === 0) {
+                alert('Корзина пуста');
+                return;
+            }
+            
+            if (userBalance >= total) {
+                userBalance -= total;
+                cartItems = [];
+                updateBalanceDisplay();
+                updateCartDisplay();
+                alert('Оплата прошла успешно!');
+            } else {
+                alert('Недостаточно средств. Пополните баланс.');
+            }
+        });
+
+        // Инициализация
+        updateBalanceDisplay();
+        updateCartDisplay();
+        
+        // Для теста: добавить товары через консоль
+        window.demoAddItem = function(name, price) {
+            cartItems.push({ name: name, price: price, quantity: 1 });
+            updateCartDisplay();
+        };
+        console.log('Для теста: demoAddItem("Футболка", 500)');
+    </script>
 </body>
 
 </html>
